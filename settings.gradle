@@ -1,0 +1,15 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "MixAndroid"
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(                                                     // new
+        settingsDir.parentFile,                                              // new
+        'mix_flutter/.android/include_flutter.groovy'                         // new
+))
